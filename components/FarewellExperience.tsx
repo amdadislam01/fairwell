@@ -10,6 +10,8 @@ import { EmotionalTransition } from "./EmotionalTransition";
 import { DepartmentReveal } from "./DepartmentReveal";
 import { FarewellTitle } from "./FarewellTitle";
 import { ClassRepresentatives } from "./ClassRepresentatives";
+import { GroupMemoriesShowcase } from "./GroupMemoriesShowcase";
+import { PhotoProtection } from "./PhotoProtection";
 import { FinalMessage } from "./FinalMessage";
 import { FinalEventInfo } from "./FinalEventInfo";
 import { AudioController } from "./AudioController";
@@ -22,9 +24,10 @@ export const FarewellExperience: React.FC = () => {
   // 2: Funny Photos Showcase (8s each)
   // 3: Department & Logo Reveal
   // 4: Farewell Title
-  // 5: Class Representatives & Organizers Tribute
-  // 6: Final Message
-  // 7: Final Event Info
+  // 5: Group Memories Showcase
+  // 6: Class Representatives & Organizers Tribute
+  // 7: Final Message
+  // 8: Final Event Info
   const [scene, setScene] = useState<number>(0);
   const [isPlaying, setIsPlaying] = useState<boolean>(true);
   const [hasInteracted, setHasInteracted] = useState<boolean>(false);
@@ -40,17 +43,20 @@ export const FarewellExperience: React.FC = () => {
   };
 
   const nextScene = () => {
-    setScene((prev) => Math.min(prev + 1, 7));
+    setScene((prev) => Math.min(prev + 1, 8));
   };
 
   const getBackgroundIntensity = () => {
     if (scene === 2) return "warm";
-    if (scene === 4 || scene === 5 || scene === 6) return "dramatic";
+    if (scene === 4 || scene === 5 || scene === 6 || scene === 7) return "dramatic";
     return "normal";
   };
 
   return (
-    <main className="relative w-screen h-screen min-h-screen bg-[#050507] text-white flex items-center justify-center overflow-hidden font-sans">
+    <main className="relative w-screen h-screen min-h-screen bg-[#050507] text-white flex items-center justify-center overflow-hidden font-sans select-none">
+      {/* Photo Protection & Anti-Download System */}
+      <PhotoProtection />
+
       {/* Autoplay & Audio Activation Overlay */}
       {!hasInteracted && (
         <div
@@ -136,6 +142,14 @@ export const FarewellExperience: React.FC = () => {
           )}
 
           {scene === 5 && (
+            <GroupMemoriesShowcase
+              groupData={farewellContent.groupPhotos}
+              onComplete={nextScene}
+              isPaused={!isPlaying}
+            />
+          )}
+
+          {scene === 6 && (
             <ClassRepresentatives
               organizersData={farewellContent.organizers}
               onComplete={nextScene}
@@ -143,7 +157,7 @@ export const FarewellExperience: React.FC = () => {
             />
           )}
 
-          {scene === 6 && (
+          {scene === 7 && (
             <FinalMessage
               finalMessageData={farewellContent.finalMessage}
               theEndData={farewellContent.theEndBadge}
@@ -152,7 +166,7 @@ export const FarewellExperience: React.FC = () => {
             />
           )}
 
-          {scene === 7 && (
+          {scene === 8 && (
             <FinalEventInfo
               eventDetails={farewellContent.eventDetails}
               logoPath={farewellContent.institution.logoPath}

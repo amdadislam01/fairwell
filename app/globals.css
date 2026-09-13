@@ -37,3 +37,24 @@ body {
   animation: fadeIn 0.3s ease-out forwards;
 }
 
+/* Photo Protection & Anti-Download Styles */
+img, picture, video, svg {
+  -webkit-user-drag: none !important;
+  -khtml-user-drag: none !important;
+  -moz-user-drag: none !important;
+  -o-user-drag: none !important;
+  user-drag: none !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -webkit-touch-callout: none !important;
+  pointer-events: auto;
+}
+
+/* Hide content when trying to print/PDF save */
+@media print {
+  html, body {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+

@@ -75,6 +75,16 @@ export interface FarewellConfig {
       tagline: string;
     }[];
   };
+  groupPhotos: {
+    badge: string;
+    title: string;
+    subtitle: string;
+    items: {
+      id: number;
+      src: string;
+      caption?: string;
+    }[];
+  };
   audio: {
     src: string;
     title: string;
@@ -153,7 +163,7 @@ export const farewellContent: FarewellConfig = {
         src: "/photos/Akhi Akter.jpeg",
         title: "Akhi Akter",
         tag: "CST Batch 22-23",
-        funnyText: "সারাদিন চিল মুডে ঘুরে বেড়ায় সবসময়\nপরীক্ষার আগের রাতে হঠাৎ পড়ে সেরা রেজাল্ট করে ফেলে",
+        funnyText: "পরীক্ষার রেজাল্টের দিনে বন্ধুদের মোটিভেশনাল ডায়লগ—\n'তুই তো ফেল করিস নাই রে, স্যারেরাই তোকে পাস করায় নাই!'",
       },
       {
         id: 4,
@@ -174,7 +184,7 @@ export const farewellContent: FarewellConfig = {
         src: "/photos/Ayesha Bushra.jpeg",
         title: "Ayesha Bushra",
         tag: "CST Batch 22-23",
-        funnyText: "ল্যাব ক্লাসে সবসময় হাতের সুন্দর নোট তৈরি রাখে\nপরীক্ষার আগে পুরো ক্লাসের সিআর হয়ে সাহায্য করে",
+        funnyText: "ছবি তোলার পর বুশরাকে সবাই সান্ত্বনা দিয়ে একটাই কথা বলে—\n'তুই তো মোটা না রে দোস্ত, মোবাইল ক্যামেরাটাই তো খারাপ!'",
       },
       {
         id: 7,
@@ -405,6 +415,46 @@ export const farewellContent: FarewellConfig = {
         photo: "/photos/Maruf Ahamed.jpeg",
         tagline: "Farewell Event Organizer",
       },
+    ],
+  },
+  groupPhotos: {
+    badge: "UNFORGETTABLE MEMORIES",
+    title: "BATCH GROUP GALLERY",
+    subtitle: "একসাথে কাটানো অবিস্মরণীয় মুহূর্তসমূহ • CST Batch 2023–2026",
+    items: [
+      { id: 1, src: "/group/790315632_1792361225280310_205756393876469137_n.jpg", caption: "Group Memory #1" },
+      { id: 2, src: "/group/794990980_1419574860279734_6751809731321332212_n.jpg", caption: "Group Memory #2" },
+      { id: 3, src: "/group/796457785_1869734750658666_193876680366143503_n.jpg", caption: "Group Memory #3" },
+      { id: 4, src: "/group/799525117_1458604052748468_3344306071797456532_n.jpg", caption: "Group Memory #4" },
+      { id: 5, src: "/group/799634065_1073579638891946_217669340000236835_n.jpg", caption: "Group Memory #5" },
+      { id: 6, src: "/group/799777353_1410819631237286_6008026586379735381_n.jpg", caption: "Group Memory #6" },
+      { id: 7, src: "/group/799907072_2064689657750395_760453663763050638_n.jpg", caption: "Group Memory #7" },
+      { id: 8, src: "/group/800114170_1107738875015474_2809492784701232398_n.jpg", caption: "Group Memory #8" },
+      { id: 9, src: "/group/800316886_1791003765432968_3531388812176249209_n.jpg", caption: "Group Memory #9" },
+      { id: 10, src: "/group/800497060_1611208867140923_7818570156711613399_n.jpg", caption: "Group Memory #10" },
+      { id: 11, src: "/group/800538498_1444518734281309_564606423822487238_n.jpg", caption: "Group Memory #11" },
+      { id: 12, src: "/group/800795623_1565162451496116_7629198678192654339_n.jpg", caption: "Group Memory #12" },
+      { id: 13, src: "/group/801127632_28783465577924510_4948417626023620396_n.jpg", caption: "Group Memory #13" },
+      { id: 14, src: "/group/801127640_826841743820028_1099427049463639401_n.jpg", caption: "Group Memory #14" },
+      { id: 15, src: "/group/801243480_937456686072324_1549839257005729294_n.jpg", caption: "Group Memory #15" },
+      { id: 16, src: "/group/801326064_1629999908540835_1534368898921950654_n.jpg", caption: "Group Memory #16" },
+      { id: 17, src: "/group/801880574_2034309510534206_1041660780152642941_n.jpg", caption: "Group Memory #17" },
+      { id: 18, src: "/group/802307281_1600118101769842_6008630403733010934_n.jpg", caption: "Group Memory #18" },
+      { id: 19, src: "/group/802332671_2578560772576897_1941527214605886633_n.jpg", caption: "Group Memory #19" },
+      { id: 20, src: "/group/802354949_1120545540632655_9009084748205761453_n.jpg", caption: "Group Memory #20" },
+      { id: 21, src: "/group/803196615_2327541767984336_6799406200362493746_n.jpg", caption: "Group Memory #21" },
+      { id: 22, src: "/group/803724269_1569608014906907_403745862699146987_n.jpg", caption: "Group Memory #22" },
+      { id: 23, src: "/group/804361747_1775474140138585_3037946944887858177_n.jpg", caption: "Group Memory #23" },
+      { id: 24, src: "/group/805116094_1620823692902773_7636688658221151668_n.jpg", caption: "Group Memory #24" },
+      { id: 25, src: "/group/806141148_1634640501518496_2671891406522326487_n.jpg", caption: "Group Memory #25" },
+      { id: 26, src: "/group/806197601_38419074611072714_7035294679358822474_n.jpg", caption: "Group Memory #26" },
+      { id: 27, src: "/group/806222760_2163456184238904_6813178638706861238_n.jpg", caption: "Group Memory #27" },
+      { id: 28, src: "/group/806270693_2120125741910185_7987033635302267890_n.jpg", caption: "Group Memory #28" },
+      { id: 29, src: "/group/806683281_2229244924523126_1634039656381527933_n.jpg", caption: "Group Memory #29" },
+      { id: 30, src: "/group/808108878_1610433137538972_5729997701667844074_n.jpg", caption: "Group Memory #30" },
+      { id: 31, src: "/group/808239205_2008588919640528_5940507423441566249_n.jpg", caption: "Group Memory #31" },
+      { id: 32, src: "/group/808414213_1777081270109819_2181650398056834659_n.jpg", caption: "Group Memory #32" },
+      { id: 33, src: "/group/808883014_929133879791727_134690116150455269_n.jpg", caption: "Group Memory #33" },
     ],
   },
 };

@@ -87,8 +87,14 @@ export const PhotoShowcase: React.FC<PhotoShowcaseProps> = ({
                   transition={{ duration: durationSeconds, ease: "linear" }}
                   src={activePhoto.src}
                   alt={activePhoto.title}
-                  className="w-full h-full object-cover object-top rounded-lg shadow-2xl"
+                  onContextMenu={(e) => e.preventDefault()}
+                  onDragStart={(e) => e.preventDefault()}
+                  draggable={false}
+                  className="w-full h-full object-cover object-top rounded-lg shadow-2xl pointer-events-none select-none"
                 />
+
+                {/* Absolute Anti-Download & Right-Click Protection Overlay Layer */}
+                <div className="absolute inset-0 z-10 bg-transparent select-none" onContextMenu={(e) => e.preventDefault()} />
 
                 {/* Bottom Overlay: Student Name Badge */}
                 <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 bg-gradient-to-t from-black via-black/75 to-transparent flex justify-center items-center pointer-events-none z-20">
